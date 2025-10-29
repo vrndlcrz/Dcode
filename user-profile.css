@@ -488,7 +488,7 @@ body {
   }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 350px) {
   .sidebar {
     width: 300px;
     min-width: 240px;
