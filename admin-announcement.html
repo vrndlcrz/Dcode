@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="admin-announcement.css" />
     <link rel="stylesheet" href="preloader.css" />
+    <link rel="stylesheet" href="chatbot.css" />
     <title>Announcement</title>
     <body>
       <button class="burger-menu" id="burgerMenu">☰</button>
@@ -149,8 +150,36 @@
           </form>
         </div>
       </div>
+
+      <!-- chatbot -->
+      <div id="chat-toggle">?</div>
+
+      <div id="chatbot">
+        <div id="chat-header">Help & FAQs</div>
+
+        <div id="chat-body"></div>
+
+        <div id="quick-questions">
+          <div class="quick-scroll">
+            <button class="quick-btn">How to request clearance?</button>
+            <button class="quick-btn">How to view my profile?</button>
+            <button class="quick-btn">How to see pending requests?</button>
+            <button class="quick-btn">How to logout?</button>
+          </div>
+        </div>
+
+        <div id="chat-input-area">
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Type your question..."
+          />
+          <button id="send-btn">➤</button>
+        </div>
+      </div>
     </body>
     <script src="admin-announcement.js"></script>
     <script src="preloader.js"></script>
+    <script src="chatbot.js"></script>
   </head>
 </html>

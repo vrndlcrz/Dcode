@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="admin-residents.css" />
     <link rel="stylesheet" href="preloader.css" />
+    <link rel="stylesheet" href="chatbot.css" />
     <title>Residents Information</title>
 
     <body>
@@ -282,8 +283,37 @@
           </div>
         </div>
       </div>
+
+      <!-- chatbot -->
+      <div id="chat-toggle">?</div>
+
+      <div id="chatbot">
+        <div id="chat-header">Help & FAQs</div>
+
+        <div id="chat-body"></div>
+
+        <div id="quick-questions">
+          <div class="quick-scroll">
+            <button class="quick-btn">How to request clearance?</button>
+            <button class="quick-btn">How to view my profile?</button>
+            <button class="quick-btn">How to see pending requests?</button>
+            <button class="quick-btn">How to logout?</button>
+          </div>
+        </div>
+
+        <div id="chat-input-area">
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Type your question..."
+          />
+          <button id="send-btn">➤</button>
+        </div>
+      </div>
+
       <script src="preloader.js"></script>
       <script src="admin-dashboard.js"></script>
+      <script src="chatbot.js"></script>
     </body>
   </head>
 </html>

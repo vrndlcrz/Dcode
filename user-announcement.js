@@ -1,3 +1,11 @@
+function updateTime() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString("en-US", { hour12: true });
+  document.getElementById("time").textContent = timeString;
+}
+setInterval(updateTime, 1000);
+updateTime();
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("announcementList");
   const stored = JSON.parse(localStorage.getItem("announcements")) || [];

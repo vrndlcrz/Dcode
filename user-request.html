@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="preloader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="chatbot.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -155,12 +156,39 @@
           </div>
         </div>
       </div>
-      
     </div> 
   </div>
 </div>
 
+<!-- CHATBOT -->
+ <div id="chat-toggle">?</div>
+
+    <div id="chatbot">
+      <div id="chat-header">Help & FAQs</div>
+
+      <div id="chat-body"></div>
+
+      <div id="quick-questions">
+        <div class="quick-scroll">
+          <button class="quick-btn">How to request clearance?</button>
+          <button class="quick-btn">How to view my profile?</button>
+          <button class="quick-btn">How to see pending requests?</button>
+          <button class="quick-btn">How to logout?</button>
+        </div>
+      </div>
+
+      <div id="chat-input-area">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="Type your question..."
+        />
+        <button id="send-btn">➤</button>
+      </div>
+    </div>
+
 <script src="user-request.js"></script>
+<script src="chatbot.js"></script>
 <script src="preloader.js"></script>
 </body>
 </html>
