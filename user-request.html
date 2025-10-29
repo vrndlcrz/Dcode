@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="user-request.css" />
+    <link rel="stylesheet" href="preloader.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+ 
+    <title>Request</title>
+  </head>
+  <body>
+
+    <p id="current-time"></p>
+
+    <div class="dashboard-container">
+      <button class="burger-menu" id="burgerMenu">☰</button>
+      
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <img
+          src="images/barangay-logo.png"
+          alt="barangay-logo"
+          class="barangay-logo"
+        />
+        <h1>Barangay Management System</h1>
+        <nav class="menu">
+          <ul class="menu-items">
+            <li>
+              <a href="user-dashboard.html" class="dashboard-link">Dashboard</a>
+            </li>
+            <li><a href="user-request.html" class="active">Document Requests</a></li>
+            <li><a href="user-announcement.html">Announcement</a></li>
+            <li><a href="user-calendar.html">Calendar</a></li>
+            <li><a href="user-profile.html">Profile</a></li>
+            <li><a href="user-officials.html">Officials</a></li>
+    
+          </ul>
+        </nav>
+      </div>
+
+      <div class="preloader" id="preloader">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+
+      <!-- Main Content -->
+       
+<div class="row auto">
+  <div class="right-content">
+    
+     <div class="main-container">
+      <div class="header">
+        <div class="header-left">
+          <h1>REQUEST FOR CERTIFICATES</h1>
+          <p> Here, you can request your documents!</p>
+        </div>
+        <div class="header-right">
+          <div class="clock" id="clock">12:00:00 AM</div>
+          <a href="index.html" class="logout-logo">
+            <img src="images/logout.png" alt="logout" class="logout-logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="content-container">
+        <div class="content-header">
+          <h2>Document Request Service</h2>
+        </div>
+      </div>
+      
+
+    <!-- Wrap both columns in a container -->
+    <div class="content-wrapper">
+      
+      <!-- LEFT COLUMN - Dropdowns -->
+      <div class="left-column">
+        <div class="dropdown" onclick="toggleDropdown('certificatesDropdown')">
+
+          <div class="dropdowntitle">
+            <span class="a"> Certificates Available </span>
+          <span class="drop-down icon">▼</span></div>
+        </div>
+        
+        <div class="dropdown-content" id="certificatesDropdown">
+          <ul>
+            <li>Barangay Certificate</li>
+            <li>Certificate of Indigency</li>
+            <li>Proof of Residency</li>
+            <li>Local Employment</li>
+            <li>Certificate to File Action</li>
+            <li>Barangay Business Permit</li>
+            <li>Barangay ID</li>
+            <li>First Time Job Seeker Certificate</li>
+          </ul>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('procedureDropdown')">
+          <div class="dropdowntitle">
+            <span class="a"> Procedure </span> <span class="drop-down icon">▼</span></div>
+          
+        </div>
+        <div class="dropdown-content" id="procedureDropdown">
+          <ol>
+            <li>Step 1: Fill out the request form with accurate information.</li>
+            <li>Step 2: Submit the form and wait for confirmation.</li>
+            <li>Step 3: Pay the required fees at the barangay office.</li>
+            <li>Step 4: Wait for processing (usually takes 3-5 business days).</li>
+            <li>Step 5: Pick up your document at the barangay office.</li>
+          </ol>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown('claimingDropdown')">
+          <div class="dropdowntitle">
+            <span class="a"> Guidelines in Claiming Requested Documents </span> <span class="drop-down icon">▼</span></div>
+        </div>
+        <div class="dropdown-content" id="claimingDropdown">
+          <ul>
+            <li>Bring a valid ID when claiming documents</li>
+            <li>Documents can be claimed within 30 days from approval</li>
+            <li>Claiming hours: 8:00 AM - 5:00 PM, Monday to Friday</li>
+            <li>Authorized representatives must present authorization letter</li>
+            <li>Processing time: 3-5 business days</li>
+          </ul>
+        </div>
+      </div> 
+      
+      <!-- quick links naman -->
+      <div class="right-column">
+        <div class="quick-links"> 
+          <h2>Quick Links <i class="fa-solid fa-arrow-pointer"></i></h2>
+
+          <div class="right-item">
+            <h3><i class="fa-solid fa-circle"></i>    Online Request of Brgy. Certificates</h3>
+            <p>Request for a copy of your barangay certificate and other related certificates.</p>
+            <button class="btn" onclick="location.href='requestB.html'">Request Now</button>
+          </div>
+      
+          <div class="right-item">
+            <h3><i class="fa-solid fa-circle"></i> Track Your Documents</h3>
+            <p>Track your documents request / Upload additional requirements</p>
+            <button class="btn" onclick="location.href='trackrequest.html'">Track My Document</button>
+          </div>
+
+          <div class="right-item">
+            <h3><i class="fa-solid fa-circle"></i>   FAQs</h3>
+            <p>Learn more about the frequently asked questions (FAQs) here.</p>
+            <button class="btn" onclick="location.href='faq.html'">Learn More</button>
+          </div>
+        </div>
+      </div>
+      
+    </div> 
+  </div>
+</div>
+
+<script src="user-request.js"></script>
+<script src="preloader.js"></script>
+</body>
+</html>

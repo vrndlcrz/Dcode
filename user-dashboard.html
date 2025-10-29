@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay Management System</title>
+    <link rel="stylesheet" href="admin-dashboard.css" />
+    <link rel="stylesheet" href="user-dashboard.css" />
+    <link rel="stylesheet" href="preloader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo-section">
+          <img
+            src="images/barangay-logo.png"
+            alt="Barangay 498 Zone 49 District IV Manila Logo"
+            class="barangay-logo"
+          />
+          <h2>Barangay Management System</h2>
+        </div>
+
+        <nav class="nav-menu">
+          <a href="user-dashboard.html" class="nav-item active">
+            <span class="nav-label">Dashboard</span>
+          </a>
+          <a href="user-request.html" class="nav-item">
+            <span class="nav-label">Document Requests</span>
+          </a>
+          <a href="user-announcement.html" class="nav-item">
+            <span class="nav-label">Announcement</span>
+          </a>
+          <a href="user-calendar.html" class="nav-item">
+            <span class="nav-label">Calendar</span>
+          </a>
+          <a href="user-profile.html" class="nav-item">
+            <span class="nav-label">Profile</span>
+          </a>
+          <a href="user-officials.html" class="nav-item">
+            <span class="nav-label">Officials</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="preloader" id="preloader">
+          <div class="spinner"></div>
+          <p>Loading...</p>
+        </div>
+        <button class="burger-menu" id="burgerMenu">☰</button>
+        <!-- Header -->
+        <header class="header">
+          <div class="header-left">
+            <section class="overview-section">
+            <div class="overview-header">
+              <h2>Dashboard Overview</h2>
+              <p class="welcome-text">Welcome back, Juan Dela Cruz!</p>
+            </div>
+          </div>
+          <div class="right-header">
+            <div class="time-and-logo">
+              <p id="time">12:00:00 AM</p>
+              <a href="index.html">
+                <img src="images/logout.png" alt="logout" class="logout-logo" />
+              </a>
+            </div>
+            <p class="right-sub">Home/Dashboard</p>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+          <!-- Requests Section -->
+          <div class="requests-container">
+            <!-- Pending Requests -->
+            <section class="requests-section">
+              <div class="section-header">
+                <h3 class="section-title">Pending Requests</h3>
+                <div
+                  class="loading-spinner"
+                  id="pendingLoader"
+                  style="display: none"
+                ></div>
+              </div>
+              <div class="requests-list" id="pendingRequestsList">
+                <!-- Pending requests will be loaded from backend API -->
+              </div>
+              <div class="empty-state" id="pendingEmpty" style="display: none">
+                <p>No pending requests at the moment</p>
+              </div>
+            </section>
+
+            <!-- Right Column -->
+            <div class="right-column">
+              <!-- Completed Requests -->
+              <section class="requests-section">
+                <div class="section-header">
+                  <h3 class="section-title">
+                    Completed Requests (Ready for Pickup)
+                  </h3>
+                  <div
+                    class="loading-spinner"
+                    id="completedLoader"
+                    style="display: none"
+                  ></div>
+                </div>
+                <div class="requests-list" id="completedRequestsList">
+                  <!-- Completed requests will be loaded from backend API -->
+                </div>
+                <div
+                  class="empty-state"
+                  id="completedEmpty"
+                  style="display: none"
+                >
+                  <p>No completed requests</p>
+                </div>
+              </section>
+
+              <!-- Recent Announcements -->
+              <section class="announcements-section">
+                <h3 class="section-title">Recent Announcements</h3>
+                <div class="announcements-list" id="announcementList">
+                  <!-- Announcements will be loaded here by JavaScript -->
+                </div>
+              </section>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="user-dashboard.js"></script>
+    <script src="preloader.js"></script>
+  </body>
+</html>

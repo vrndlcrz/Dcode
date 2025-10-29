@@ -1,0 +1,459 @@
+* {
+  font-family: Poppins;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.choosing-page {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  position: relative;
+  min-height: 100vh;
+}
+
+.left-landingpage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 100px;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #21205d;
+  color: #ffffff;
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+.barangay-logo {
+  width: 200px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+h1 {
+  color: #f5fd12;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.sub-content {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.right-landingpage {
+  padding: 0px;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+.right-heading {
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.right-sub {
+  padding-bottom: 30px;
+}
+
+.down-arrow {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.51);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 100;
+  border: 2px solid #f5fd12;
+}
+
+.down-arrow:hover {
+  scale: 1.1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.down-arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke: #f5fd12;
+  stroke-width: 2;
+  fill: none;
+}
+
+.admin-login,
+.user-login {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.admin-card,
+.user-card {
+  border-radius: 30px;
+  background: #d9d9d9;
+  width: 500px;
+  height: 150px;
+  flex-shrink: 0;
+  padding: 30px 0px;
+  margin-bottom: 25px;
+  transition: 0.2s ease-in-out;
+}
+
+.admin-card p,
+.user-card p {
+  padding: 0 70px;
+}
+
+.user-card p {
+  padding: 0 80px;
+}
+
+.admin-card:hover,
+.user-card:hover {
+  scale: 1.03;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card:hover h2,
+.user-card:hover h2 {
+  color: #21205d;
+}
+
+.admin-card:active,
+.user-card:active {
+  background-color: #ffffff;
+}
+
+/* BREAKPOINT 1: LARGE DESKTOP (1440px and above) */
+@media (min-width: 1440px) {
+  body {
+    overflow: hidden;
+  }
+
+  .left-landingpage {
+    padding: 50px 120px;
+  }
+
+  .admin-card,
+  .user-card {
+    width: 550px;
+  }
+
+  .down-arrow {
+    display: none;
+  }
+}
+
+/* BREAKPOINT 2: DESKTOP (1024px to 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+
+  .choosing-page {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .left-landingpage {
+    padding: 40px 60px;
+    gap: 40px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .sub-content {
+    font-size: 16px;
+    padding-bottom: 50px;
+  }
+
+  .footer {
+    padding: 0px 50px 0px 50px;
+  }
+
+  .right-heading {
+    font-size: 36px;
+  }
+
+  .admin-card,
+  .user-card {
+    width: 420px;
+    height: 140px;
+  }
+
+  .admin-card p,
+  .user-card p {
+    padding: 0 50px;
+  }
+
+  .down-arrow {
+    display: none;
+  }
+}
+
+/* BREAKPOINT 3: TABLET (768px to 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  body {
+    overflow-x: visible;
+  }
+
+  .choosing-page {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .left-landingpage {
+    padding: 40px 30px;
+    gap: 30px;
+    min-height: 92vh;
+    max-height: none;
+    justify-content: center;
+  }
+
+  .right-landingpage {
+    min-height: 90vh;
+    padding: 50px 20px;
+  }
+
+  .barangay-logo {
+    width: 150px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .sub-content {
+    font-size: 15px;
+    padding-bottom: 30px;
+  }
+
+  .right-heading {
+    font-size: 32px;
+  }
+
+  .right-sub {
+    padding-bottom: 20px;
+  }
+
+  .admin-card,
+  .user-card {
+    width: 100%;
+    max-width: 420px;
+    height: 150px;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+  }
+
+  .admin-card p,
+  .user-card p {
+    padding: 0 40px;
+    font-size: 14px;
+  }
+
+  .down-arrow {
+    display: flex;
+  }
+}
+
+/* BREAKPOINT 4: MOBILE (480px to 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  body {
+    overflow-x: visible;
+  }
+
+  .choosing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left-landingpage {
+    padding: 35px 20px;
+    gap: 25px;
+    min-height: 92vh;
+    max-height: none;
+    justify-content: center;
+  }
+
+  .right-landingpage {
+    min-height: 90vh;
+    padding: 35px 15px;
+  }
+
+  .footer {
+    font-size: 14px;
+    padding: 0px 50px 0px 50px;
+  }
+
+  .barangay-logo {
+    width: 130px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .sub-content {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+
+  .right-heading {
+    font-size: 26px;
+  }
+
+  .right-sub {
+    padding-bottom: 15px;
+  }
+
+  .admin-card,
+  .user-card {
+    width: 100%;
+    max-width: 360px;
+    height: 160px;
+    padding: 15px 0px;
+    margin-bottom: 15px;
+  }
+
+  .admin-card p,
+  .user-card p {
+    padding: 0 40px;
+    font-size: 13px;
+  }
+
+  .down-arrow {
+    display: flex;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* BREAKPOINT 5: SMALL MOBILE (below 480px) */
+@media (max-width: 479px) {
+  body {
+    overflow-x: visible;
+  }
+
+  .choosing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left-landingpage {
+    padding: 25px 15px;
+    gap: 15px;
+    min-height: 95vh;
+    max-height: none;
+    justify-content: center;
+  }
+
+  .right-landingpage {
+    justify-content: start;
+    min-height: 75vh;
+    padding: 70px 12px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+  .barangay-logo {
+    width: 110px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .sub-content {
+    font-size: 12px;
+    padding-bottom: 15px;
+  }
+
+  .right-heading {
+    font-size: 20px;
+  }
+
+  .right-sub {
+    padding-bottom: 30px;
+  }
+
+  .admin-card,
+  .user-card {
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    padding: 12px 0px;
+    margin-bottom: 12px;
+  }
+
+  .admin-logo {
+    width: 35px;
+  }
+
+  .user-logo {
+    width: 25px;
+  }
+
+  .admin-card,
+  .user-card {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .admin-card p,
+  .user-card p {
+    padding: 0 20px;
+    font-size: 12px;
+  }
+
+  .down-arrow {
+    display: flex;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .down-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}

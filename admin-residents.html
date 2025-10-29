@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin-residents.css" />
+    <link rel="stylesheet" href="preloader.css" />
+    <title>Residents Information</title>
+
+    <body>
+      <button class="burger-menu" id="burgerMenu">☰</button>
+
+      <div class="sidebar" id="sidebar">
+        <img
+          src="images/barangay-logo.png"
+          alt="barangay-logo"
+          class="barangay-logo"
+        />
+        <h1>Barangay Management System</h1>
+        <nav class="menu">
+          <ul class="menu-items">
+            <li>
+              <a href="admin-dashboard.html">Dashboard</a>
+            </li>
+            <li><a href="admin-officials.html">Officials</a></li>
+            <li>
+              <a href="admin-residents.html" class="active"
+                >Residents Information</a
+              >
+            </li>
+            <li><a href="admin-calendar.html">Calendar</a></li>
+            <li>
+              <a href="admin-document-requests.html">Document Requests</a>
+            </li>
+            <li>
+              <a href="admin-announcement.html">Announcement</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="main-container">
+        <div class="header">
+          <div class="clock" id="clock">12:00:00 AM</div>
+          <a href="index.html" class="logout-logo">
+            <img src="images/logout.png" alt="logout" class="logout-logo" />
+          </a>
+        </div>
+
+        <div class="content-box">
+          <div class="content-header">Residents Information</div>
+
+          <div class="table-controls">
+            <div class="show-entries">
+              <span>Show</span>
+              <select id="entriesSelect">
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <span>entries</span>
+            </div>
+            <div class="search-box">
+              <span>Search:</span>
+              <input type="text" id="searchInput" placeholder="" />
+            </div>
+          </div>
+
+          <div class="residents-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Middle Name</th>
+                  <th>Last Name</th>
+                  <th>PWD</th>
+                  <th>Age</th>
+                  <th>Status</th>
+                  <th>Gender</th>
+                  <th>Voters Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>No</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>No</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>No</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Timber</td>
+                  <td>Vargas</td>
+                  <td>Yes</td>
+                  <td>20</td>
+                  <td>Single</td>
+                  <td>Male</td>
+                  <td>Yes</td>
+                  <td class="action-buttons">
+                    <button class="btn-edit">
+                      <img src="images/brush-logo.png" />
+                    </button>
+                    <button class="btn-delete">
+                      <img src="images/delete-logo.png" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-footer">
+            <div class="showing-info">Showing 1 to 10 of 11 entries</div>
+            <div class="pagination">
+              <button id="prevBtn" disabled>Previous</button>
+              <button id="nextBtn">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="preloader.js"></script>
+      <script src="admin-dashboard.js"></script>
+    </body>
+  </head>
+</html>

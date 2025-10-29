@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="landingpage.css" />
+    <link rel="stylesheet" href="admin-login.css" />
+    <link rel="stylesheet" href="preloader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Barangay 498</title>
+    <title>User Sign In</title>
   </head>
 
   <body>
@@ -36,37 +37,49 @@
       </div>
 
       <div class="right-landingpage">
-        <h2 class="right-heading">Welcome!</h2>
-        <p class="right-sub">Choose how you want to Sign In</p>
-
-        <a href="admin-login.html" class="admin-login">
-          <div class="admin-card">
-            <img
-              src="images/admin-logo.png"
-              alt="admin-logo"
-              class="admin-logo"
-            />
-            <h2>Sign in as Admin</h2>
-            <p>Access Dashboard, Manage Documents, Scheduling, Announcing</p>
-          </div>
+        <a href="index.html" class="blueback-btn">
+          <img src="images/blueback-logo.png" alt="back-logo" />
         </a>
 
-        <a href="user-login.html" class="user-login">
-          <div class="user-card">
-            <img src="images/user-logo.png" alt="user-logo" class="user-logo" />
-            <h2>Sign in as User</h2>
-            <p>View Dashboard, Request, Documents, View Announcement</p>
-          </div>
-        </a>
+        <div class="form-container">
+          <h1>Welcome!</h1>
+          <p class="subheader">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+          <h1 class="form-header">Username</h1>
+          <input type="text" placeholder="ex. John Doe" />
+          <h1 class="form-header">Password</h1>
+          <input type="password" placeholder="ex. Doe@123" />
+          <button
+            class="sign-in"
+            onclick="window.location.href='admin-dashboard.html'"
+          >
+            Sign In
+          </button>
+          <p class="forgot-password">
+            Forgot Password?
+            <a
+              href="#"
+              style="font-weight: 600; color: red; text-decoration: none"
+              >Talk Developer</a
+            >
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Scroll Arrow -->
     <div class="down-arrow" id="scrollArrow">
       <svg viewBox="0 0 24 24">
         <path d="M12 5v14M19 12l-7 7-7-7" />
       </svg>
     </div>
+
+    <div class="preloader" id="preloader">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+
+    <script src="user-login.js"></script>
+    <script src="preloader.js"></script>
   </body>
-  <script src="user-login.js"></script>
 </html>

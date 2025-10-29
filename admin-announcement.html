@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin-announcement.css" />
+    <link rel="stylesheet" href="preloader.css" />
+    <title>Announcement</title>
+    <body>
+      <button class="burger-menu" id="burgerMenu">☰</button>
+
+      <div class="sidebar" id="sidebar">
+        <img
+          src="images/barangay-logo.png"
+          alt="barangay-logo"
+          class="barangay-logo"
+        />
+        <h1>Barangay Management System</h1>
+        <nav class="menu">
+          <ul class="menu-items">
+            <li>
+              <a href="admin-dashboard.html">Dashboard</a>
+            </li>
+            <li><a href="admin-officials.html">Officials</a></li>
+            <li>
+              <a href="admin-residents.html">Residents Information</a>
+            </li>
+            <li><a href="admin-calendar.html">Calendar</a></li>
+            <li>
+              <a href="admin-document-requests.html">Document Requests</a>
+            </li>
+            <li>
+              <a href="admin-announcement.html" class="active">Announcement</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="main-container">
+        <div class="header">
+          <div class="clock" id="clock">12:00:00 AM</div>
+          <a href="index.html" class="logout-logo">
+            <img src="images/logout.png" alt="logout" class="logout-logo" />
+          </a>
+        </div>
+
+        <div class="content-box">
+          <div class="content-header">Announcement</div>
+
+          <form class="announcement-form" id="announcementForm">
+            <div class="form-left">
+              <div class="form-group">
+                <label>Title</label>
+                <input
+                  type="text"
+                  id="titleInput"
+                  placeholder="Enter announcement title"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Message</label>
+                <div class="textarea-wrapper">
+                  <textarea
+                    id="messageInput"
+                    placeholder="Go ahead, put anything."
+                    required
+                    class="message-input"
+                  ></textarea>
+                  <div class="input-icons">
+                    <button
+                      type="button"
+                      class="icon-btn"
+                      id="linkBtn"
+                      data-tooltip="Add Link"
+                      title="Add Link"
+                    >
+                      <img src="images/link-logo.png" alt="link-logo" />
+                    </button>
+                    <button
+                      type="button"
+                      class="icon-btn"
+                      id="imageBtn"
+                      data-tooltip="Add Image"
+                      title="Add Image"
+                    >
+                      <img
+                        src="images/attachphoto-logo.png"
+                        alt="attachphoto-logo"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      class="icon-btn"
+                      id="videoBtn"
+                      data-tooltip="Add Video"
+                      title="Add Video"
+                    >
+                      <img
+                        src="images/attachvideo-logo.png"
+                        alt="attachvideo-logo"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hidden file inputs -->
+              <input
+                type="file"
+                id="imageInput"
+                class="hidden-input"
+                accept="image/*"
+              />
+              <input
+                type="file"
+                id="videoInput"
+                class="hidden-input"
+                accept="video/*"
+              />
+            </div>
+
+            <div class="form-right">
+              <div class="form-group">
+                <label>Send to</label>
+                <select id="sendToSelect" required>
+                  <option value="all" selected>All</option>
+                  <option value="residents">Residents</option>
+                  <option value="officials">Officials</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Set date and time</label>
+                <input type="datetime-local" id="dateTimeInput" required />
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="send-btn">SEND</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </body>
+    <script src="admin-announcement.js"></script>
+    <script src="preloader.js"></script>
+  </head>
+</html>

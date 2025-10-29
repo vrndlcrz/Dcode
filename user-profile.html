@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resident Profile | Barangay Management System</title>
+    <link rel="stylesheet" href="user-profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div class="brand">
+            <div class="logo-container">
+              <img
+                src="images/barangay-logo.png"
+                alt="Barangay Logo"
+                class="barangay-logo"
+              />
+            </div>
+            <h2>Barangay Management System</h2>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="user-dashboard.html">Dashboard</a></li>
+            <li><a href="user-request.html">Document Requests</a></li>
+            <li><a href="user-announcement.html">Announcement</a></li>
+            <li><a href="user-calendar.html">Calendar</a></li>
+            <li class="active"><a href="user-profile.html">Profile</a></li>
+
+            <li><a href="user-officials.html">Officials</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main">
+        <button class="burger-menu" id="burgerMenu">☰</button>
+        <!-- Topbar -->
+        <header class="topbar">
+          <div class="topbar-spacer"></div>
+          <div class="topbar-right">
+            <div id="clock" class="clock">00:00:00 AM</div>
+            <a href="index.html" class="logout-logo">
+              <img src="images/logout.png" alt="logout" class="logout-logo" />
+            </a>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <section class="content">
+          <!-- Section Title -->
+          <div class="section-title">Profile</div>
+
+          <!-- Profile Header -->
+          <div class="profile-header-card">
+            <div class="profile-header-inner">
+              <div class="avatar-large" aria-hidden="true"></div>
+
+              <div class="name-block">
+                <h1 class="fullname">Awatid Serap O. Verload</h1>
+                <div class="meta">
+                  <div class="meta-line">
+                    <span class="meta-label">Resident ID:</span> BRG-2025-00123
+                  </div>
+                  <div class="meta-line">
+                    <span class="meta-label">Status:</span> Active
+                  </div>
+                </div>
+              </div>
+
+              <div class="edit-container">
+                <button class="edit-btn" id="editProfile">Edit Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Section -->
+          <div class="info-section">
+            <!-- Basic Info -->
+            <div class="basic-info card">
+              <h2>Basic Information</h2>
+              <div class="pairs">
+                <div class="pair">
+                  <div class="label">Full Name</div>
+                  <div class="value">Awatid Serap O. Verload</div>
+                </div>
+                <div class="pair">
+                  <div class="label">Age</div>
+                  <div class="value">19</div>
+                </div>
+                <div class="pair">
+                  <div class="label">Contact</div>
+                  <div class="value">+63 912 345 6789</div>
+                </div>
+                <div class="pair">
+                  <div class="label">Address</div>
+                  <div class="value">123 Barangay St., Zone 4, Manila</div>
+                </div>
+                <div class="pair">
+                  <div class="label">Date Of Birth</div>
+                  <div class="value">October 25, 2005</div>
+                </div>
+                <div class="pair">
+                  <div class="label">Gender</div>
+                  <div class="value">Male</div>
+                </div>
+                <div class="pair">
+                  <div class="label">Civil Status</div>
+                  <div class="value">Single</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- IDs and Documents -->
+            <div class="ids-docs card">
+              <h2>IDs & Documents</h2>
+              <div class="id-item">
+                <div class="id-label">SSS</div>
+                <div class="id-value">12-3456789-0</div>
+              </div>
+              <div class="id-item">
+                <div class="id-label">PhilHealth</div>
+                <div class="id-value">PH123456789</div>
+              </div>
+            </div>
+
+            <!-- Household -->
+            <aside class="household card">
+              <h2>Household</h2>
+              <div class="hh-label"><strong>Household ID:</strong> HH-0456</div>
+              <div class="hh-members">
+                <ul>
+                  <li>Maria Verload — Mother</li>
+                  <li>Pedro Verload — Father</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="user-profile.js"></script>
+  </body>
+</html>

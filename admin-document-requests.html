@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin-document-requests.css" />
+    <link rel="stylesheet" href="preloader.css" />
+    <title>Document Requests</title>
+  </head>
+
+  <body>
+    <button class="burger-menu" id="burgerMenu">☰</button>
+
+    <div class="sidebar" id="sidebar">
+      <img
+        src="images/barangay-logo.png"
+        alt="barangay-logo"
+        class="barangay-logo"
+      />
+      <h1>Barangay Management System</h1>
+      <nav class="menu">
+        <ul class="menu-items">
+          <li>
+            <a href="admin-dashboard.html">Dashboard</a>
+          </li>
+          <li><a href="admin-officials.html">Officials</a></li>
+          <li>
+            <a href="admin-residents.html">Residents Information</a>
+          </li>
+          <li><a href="admin-calendar.html">Calendar</a></li>
+          <li>
+            <a href="admin-document-requests.html" class="active"
+              >Document Requests</a
+            >
+          </li>
+          <li>
+            <a href="admin-announcement.html">Announcement</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-container">
+      <div class="header">
+        <div class="header-left">
+          <h1>DOCUMENT REQUESTS</h1>
+          <p>Manage and Track all Document Requests</p>
+        </div>
+        <div class="header-right">
+          <div class="clock" id="clock">12:00:00 AM</div>
+          <a href="index.html" class="logout-logo">
+            <img src="images/logout.png" alt="logout" class="logout-logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="content-container">
+        <div class="content-header">
+          <h2>Document Request List</h2>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-group">
+            <label>Show</label>
+            <select id="entriesPerPage">
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <span>entries</span>
+          </div>
+
+          <div class="filter-group">
+            <label>Status:</label>
+            <select id="statusFilter">
+              <option value="all">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="processing">Processing</option>
+              <option value="ready">Ready for Pickup</option>
+              <option value="completed">Completed</option>
+              <option value="rejected">Rejected</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Document Type:</label>
+            <select id="documentFilter">
+              <option value="all">All Documents</option>
+              <option value="certificate">Barangay Certificate</option>
+              <option value="indigency">Certificate of Indigency</option>
+              <option value="clearance">Barangay Clearance</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Search:</label>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search requests..."
+            />
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Date Requested</th>
+                <th>Resident Name</th>
+                <th>Document Type</th>
+                <th>Purpose</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="requestsTableBody">
+              <!-- Sample data -->
+              <tr>
+                <td>#REQ-001</td>
+                <td>2025-10-20</td>
+                <td>Juan Dela Cruz</td>
+                <td>Barangay Certificate</td>
+                <td>Employment</td>
+                <td>
+                  <span class="status-badge status-pending">Pending</span>
+                </td>
+                <td>
+                  <div class="action-buttons">
+                    <button
+                      class="btn btn-view"
+                      onclick="viewRequest('REQ-001')"
+                    >
+                      View
+                    </button>
+                    <button
+                      class="btn btn-approve"
+                      onclick="updateStatus('REQ-001', 'processing')"
+                    >
+                      Process
+                    </button>
+                    <button
+                      class="btn btn-reject"
+                      onclick="updateStatus('REQ-001', 'rejected')"
+                    >
+                      Reject
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#REQ-002</td>
+                <td>2025-10-19</td>
+                <td>Maria Santos</td>
+                <td>Certificate of Indigency</td>
+                <td>Medical Assistance</td>
+                <td>
+                  <span class="status-badge status-processing">Processing</span>
+                </td>
+                <td>
+                  <div class="action-buttons">
+                    <button
+                      class="btn btn-view"
+                      onclick="viewRequest('REQ-002')"
+                    >
+                      View
+                    </button>
+                    <button
+                      class="btn btn-approve"
+                      onclick="updateStatus('REQ-002', 'ready')"
+                    >
+                      Mark Ready
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#REQ-003</td>
+                <td>2025-10-18</td>
+                <td>Pedro Reyes</td>
+                <td>Barangay Clearance</td>
+                <td>Business Permit</td>
+                <td>
+                  <span class="status-badge status-ready"
+                    >Ready for Pickup</span
+                  >
+                </td>
+                <td>
+                  <div class="action-buttons">
+                    <button
+                      class="btn btn-view"
+                      onclick="viewRequest('REQ-003')"
+                    >
+                      View
+                    </button>
+                    <button
+                      class="btn btn-approve"
+                      onclick="updateStatus('REQ-003', 'completed')"
+                    >
+                      Complete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#REQ-004</td>
+                <td>2025-10-17</td>
+                <td>Ana Garcia</td>
+                <td>Barangay Certificate</td>
+                <td>School Requirement</td>
+                <td>
+                  <span class="status-badge status-completed">Completed</span>
+                </td>
+                <td>
+                  <div class="action-buttons">
+                    <button
+                      class="btn btn-view"
+                      onclick="viewRequest('REQ-004')"
+                    >
+                      View
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#REQ-005</td>
+                <td>2025-10-21</td>
+                <td>Carlos Mendoza</td>
+                <td>Certificate of Indigency</td>
+                <td>Financial Assistance</td>
+                <td>
+                  <span class="status-badge status-pending">Pending</span>
+                </td>
+                <td>
+                  <div class="action-buttons">
+                    <button
+                      class="btn btn-view"
+                      onclick="viewRequest('REQ-005')"
+                    >
+                      View
+                    </button>
+                    <button
+                      class="btn btn-approve"
+                      onclick="updateStatus('REQ-005', 'processing')"
+                    >
+                      Process
+                    </button>
+                    <button
+                      class="btn btn-reject"
+                      onclick="updateStatus('REQ-005', 'rejected')"
+                    >
+                      Reject
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <div class="pagination-info">Showing 1 to 5 of 5 entries</div>
+          <div class="pagination-buttons">
+            <button id="prevBtn" disabled>Previous</button>
+            <button id="nextBtn" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Request Modal -->
+    <div id="viewModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Request Details</h2>
+          <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="detail-row">
+            <div class="detail-label">Request ID:</div>
+            <div class="detail-value" id="modalRequestId">#REQ-001</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Date Requested:</div>
+            <div class="detail-value" id="modalDate">2025-10-20</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Resident Name:</div>
+            <div class="detail-value" id="modalName">Juan Dela Cruz</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Document Type:</div>
+            <div class="detail-value" id="modalDocType">
+              Barangay Certificate
+            </div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Purpose:</div>
+            <div class="detail-value" id="modalPurpose">Employment</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Contact Number:</div>
+            <div class="detail-value" id="modalContact">09123456789</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Status:</div>
+            <div class="detail-value" id="modalStatus">
+              <span class="status-badge status-pending">Pending</span>
+            </div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Expected Date to Receive:</div>
+            <div class="detail-value" id="modalExpectedDate">2025-10-23</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Additional Notes:</div>
+            <div class="detail-value" id="modalNotes">
+              Urgent request for job application deadline.
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-modal btn-cancel" onclick="closeModal()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="admin-document-requests.js"></script>
+  <script src="preloader.js"></script>
+</html>

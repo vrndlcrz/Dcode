@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resident Announcements</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="user-announcement.css" />
+    <link rel="stylesheet" href="preloader.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <img
+          src="images/barangay-logo.png"
+          alt="Barangay Logo"
+          class="barangay-logo"
+        />
+        <h2>Barangay Management System</h2>
+        <ul>
+          <li><a href="user-dashboard.html">Dashboard</a></li>
+          <li><a href="user-request.html">Document Requests</a></li>
+          <li>
+            <a href="user-announcement.html" class="active">Announcement</a>
+          </li>
+          <li><a href="user-calendar.html">Calendar</a></li>
+          <li><a href="user-profile.html">Profile</a></li>
+          <li><a href="user-officials.html">Officials</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <button class="burger-menu" id="burgerMenu">☰</button>
+        <div class="topbar">
+          <div class="time-user">
+            <span id="time"></span>
+            <a href="index.html" class="logout-logo">
+              <img src="images/logout.png" alt="logout" class="logout-logo" />
+            </a>
+          </div>
+        </div>
+
+        <div class="header-bar">
+          <h3>Announcement</h3>
+        </div>
+
+        <section id="announcementList" class="announcement-list">
+          <!-- Announcements dynamically inserted here -->
+        </section>
+      </main>
+    </div>
+
+    <script src="user-announcement.js"></script>
+    <script src="preloader.js"></script>
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString("en-US", { hour12: true });
+        document.getElementById("time").textContent = timeString;
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
+    </script>
+  </body>
+</html>
