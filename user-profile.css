@@ -490,7 +490,7 @@ body {
 
 @media (max-width: 365px) {
   .sidebar {
-    width: 280px;
+    width: 300px;
     min-width: 240px;
   }
 
