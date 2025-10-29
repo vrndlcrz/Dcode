@@ -491,7 +491,6 @@ body {
 @media (max-width: 350px) {
   .sidebar {
     width: 300px;
-    min-width: 240px;
   }
 
   .burger-menu {
